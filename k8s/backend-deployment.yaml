@@ -23,3 +23,12 @@ spec:
         env:
         - name: NODE_ENV
           value: production
+        - name: MONGODB_URI
+          value: "mongodb://mongoadmin:secret@mongodb:27017/dbname?authSource=admin"
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chatapp-secret
+              key: jwt
+        - name: PORT
+          value: "5001"
